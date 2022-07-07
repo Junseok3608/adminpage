@@ -1,0 +1,208 @@
+div {
+  box-sizing: border-box;
+}
+@mixin colNum($num) {
+  width: (100% * ($num/12));
+}
+@mixin colMdNum($num) {
+  @media screen and (max-width: 768px) {
+    width: (100% * ($num/12));
+  }
+}
+@mixin colSmNum($num) {
+  @media screen and (max-width: 576px) {
+    width: (100% * ($num/12));
+  }
+}
+@mixin colLgNum($num) {
+  @media screen and (max-width: 1200px) {
+    width: (100% * ($num/12));
+  }
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row {
+  // col lg mediaquery
+  .col-lg-1 {
+    @include colLgNum(1);
+  }
+  .col-lg-2 {
+    @include colLgNum(2);
+  }
+  .col-lg-3 {
+    @include colLgNum(3);
+  }
+  .col-lg-4 {
+    @include colLgNum(4);
+  }
+  .col-lg-5 {
+    @include colLgNum(5);
+  }
+  .col-lg-6 {
+    @include colLgNum(6);
+  }
+  .col-lg-7 {
+    @include colLgNum(7);
+  }
+  .col-lg-8 {
+    @include colLgNum(8);
+  }
+  .col-lg-9 {
+    @include colLgNum(9);
+  }
+  .col-lg-10 {
+    @include colLgNum(10);
+  }
+  .col-lg-11 {
+    @include colLgNum(11);
+  }
+  .col-lg-12 {
+    @include colLgNum(12);
+  }
+}
+.row {
+  // col md media query
+  .col-md-1 {
+    @include colMdNum(1);
+  }
+  .col-md-2 {
+    @include colMdNum(2);
+  }
+  .col-md-3 {
+    @include colMdNum(3);
+  }
+  .col-md-4 {
+    @include colMdNum(4);
+  }
+  .col-md-5 {
+    @include colMdNum(5);
+  }
+  .col-md-6 {
+    @include colMdNum(6);
+  }
+  .col-md-7 {
+    @include colMdNum(7);
+  }
+  .col-md-8 {
+    @include colMdNum(8);
+  }
+  .col-md-9 {
+    @include colMdNum(9);
+  }
+  .col-md-10 {
+    @include colMdNum(10);
+  }
+  .col-md-11 {
+    @include colMdNum(11);
+  }
+  .col-md-12 {
+    @include colMdNum(12);
+  }
+}
+.row {
+  // col sm media query
+  .col-sm-1 {
+    @include colSmNum(1);
+  }
+  .col-sm-2 {
+    @include colSmNum(2);
+  }
+  .col-sm-3 {
+    @include colSmNum(3);
+  }
+  .col-sm-4 {
+    @include colSmNum(4);
+  }
+  .col-sm-5 {
+    @include colSmNum(5);
+  }
+  .col-sm-6 {
+    @include colSmNum(6);
+  }
+  .col-sm-7 {
+    @include colSmNum(7);
+  }
+  .col-sm-8 {
+    @include colSmNum(8);
+  }
+  .col-sm-9 {
+    @include colSmNum(9);
+  }
+  .col-sm-10 {
+    @include colSmNum(10);
+  }
+  .col-sm-11 {
+    @include colSmNum(11);
+  }
+  .col-sm-12 {
+    @include colSmNum(12);
+  }
+}
+
+.row {
+  // col nomal media query
+  .col {
+    width: 100%;
+  }
+  .col-1 {
+    @include colNum(1);
+  }
+  .col-2 {
+    @include colNum(2);
+  }
+  .col-3 {
+    @include colNum(3);
+  }
+  .col-4 {
+    @include colNum(4);
+  }
+  .col-5 {
+    @include colNum(5);
+  }
+  .col-6 {
+    @include colNum(6);
+  }
+  .col-7 {
+    @include colNum(7);
+  }
+  .col-8 {
+    @include colNum(8);
+  }
+  .col-9 {
+    @include colNum(9);
+  }
+  .col-10 {
+    @include colNum(10);
+  }
+  .col-11 {
+    @include colNum(11);
+  }
+  .col-12 {
+    @include colNum(12);
+  }
+}
+@mixin heightNum($num) {
+  height: 10vh * $num;
+}
+.row {
+  .h-1 {
+    @include heightNum(1);
+  }
+  .h-2 {
+    @include heightNum(2);
+  }
+  .h-3 {
+    @include heightNum(3);
+  }
+  .h-4 {
+    @include heightNum(4);
+  }
+  .h-5 {
+    @include heightNum(5);
+  }
+  .h-6 {
+    @include heightNum(6);
+  }
+}

@@ -1,0 +1,96 @@
+.shakeBtn {
+  width: 70px;
+  height: 40px;
+  border: none;
+  background-color: skyblue;
+  border-radius: 10px;
+  color: white;
+}
+.shakeBtn:hover {
+  animation-name: shakeLnR;
+  animation-duration: 0.8s;
+}
+@keyframes shakeLnR {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  15% {
+    transform: rotateZ(-20deg);
+  }
+  30% {
+    transform: rotateZ(20deg);
+  }
+  45% {
+    transform: rotateZ(-20deg);
+  }
+  60% {
+    transform: rotateZ(20deg);
+  }
+  75% {
+    transform: rotateZ(0deg);
+  }
+}
+.ani-rotate-scale:hover {
+  animation-name: rotscale;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes rotscale {
+  0% {
+    transform: none;
+  }
+  25% {
+    transform: rotateZ(-20deg);
+  }
+  100% {
+    transform: scale(1.5) rotateZ(45deg);
+  }
+}
+.sidebar {
+  position: fixed;
+  top: 0px;
+  left: -150px;
+  width: 250px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  .menu-title {
+    transform: translateX(70px);
+  }
+  &:hover {
+    animation-name: ani-sidebar;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  &:hover .menu-title {
+    transition-delay: 0.4s;
+    transform: none;
+  }
+  &:hover .menu-item {
+    animation-name: ani-sidebar-item;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes ani-sidebar {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(120px);
+  }
+}
+@keyframes ani-sidebar-item {
+  0% {
+    transform: translateX(0px);
+  }
+  55% {
+    transform: translateX(80px) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
