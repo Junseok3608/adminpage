@@ -1,175 +1,65 @@
+@charset "UTF-8";
+*,
 html {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 div {
   box-sizing: inherit;
 }
 
-.shakeBtn {
-  width: 70px;
-  height: 40px;
-  border: none;
-  background-color: skyblue;
-  border-radius: 10px;
-  color: white;
+.grid-container {
+  max-width: 500px;
+  max-height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px 100px;
+  grid-template-areas: "헤더 헤더 헤더 헤더" "사이드 메인 메인 메인" "사이드 메인 메인 메인" "사이드 메인 메인 메인";
+}
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "헤더" "사이드" "메인";
+  }
+}
+.grid-container div {
+  border: 1px solid black;
+}
+.grid-container .grid-nav {
+  grid-area: 헤더;
+}
+.grid-container .grid-sidebar {
+  grid-area: 사이드;
+}
+.grid-container .grid-content {
+  grid-area: 메인;
 }
 
-.shakeBtn:hover {
-  -webkit-animation-name: shakeLnR;
-          animation-name: shakeLnR;
-  -webkit-animation-duration: 0.8s;
-          animation-duration: 0.8s;
+.grid-container2 {
+  max-width: 500px;
+  max-height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px 100px;
+  grid-template-areas: "큰거 큰거 ." "큰거 큰거 ." ". . .";
 }
-
-@-webkit-keyframes shakeLnR {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  15% {
-    transform: rotateZ(-20deg);
-  }
-  30% {
-    transform: rotateZ(20deg);
-  }
-  45% {
-    transform: rotateZ(-20deg);
-  }
-  60% {
-    transform: rotateZ(20deg);
-  }
-  75% {
-    transform: rotateZ(0deg);
-  }
-}
-
-@keyframes shakeLnR {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  15% {
-    transform: rotateZ(-20deg);
-  }
-  30% {
-    transform: rotateZ(20deg);
-  }
-  45% {
-    transform: rotateZ(-20deg);
-  }
-  60% {
-    transform: rotateZ(20deg);
-  }
-  75% {
-    transform: rotateZ(0deg);
-  }
-}
-.ani-rotate-scale:hover {
-  -webkit-animation-name: rotscale;
-          animation-name: rotscale;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes rotscale {
-  0% {
-    transform: none;
-  }
-  25% {
-    transform: rotateZ(-20deg);
-  }
-  100% {
-    transform: scale(1.5) rotateZ(45deg);
-  }
-}
-
-@keyframes rotscale {
-  0% {
-    transform: none;
-  }
-  25% {
-    transform: rotateZ(-20deg);
-  }
-  100% {
-    transform: scale(1.5) rotateZ(45deg);
-  }
-}
-.sidebar {
-  position: fixed;
-  top: 0px;
-  left: -150px;
-  width: 250px;
+.grid-container2 div img {
+  width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: black;
-  color: white;
 }
-.sidebar .menu-title {
-  transform: translateX(70px);
+.grid-container2 div:nth-child(1) {
+  grid-area: 큰거;
 }
-.sidebar:hover {
-  -webkit-animation-name: ani-sidebar;
-          animation-name: ani-sidebar;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-.sidebar:hover .menu-title {
-  transition-delay: 0.4s;
-  transform: none;
-}
-.sidebar:hover .menu-item {
-  -webkit-animation-name: ani-sidebar-item;
-          animation-name: ani-sidebar-item;
-  -webkit-animation-duration: 0.8s;
-          animation-duration: 0.8s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes ani-sidebar {
-  0% {
-    transform: translateX(0px);
-  }
-  100% {
-    transform: translateX(120px);
+@media screen and (max-width: 768px) {
+  .grid-container2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "큰거" "." ".";
   }
 }
 
-@keyframes ani-sidebar {
-  0% {
-    transform: translateX(0px);
-  }
-  100% {
-    transform: translateX(120px);
-  }
-}
-@-webkit-keyframes ani-sidebar-item {
-  0% {
-    transform: translateX(0px);
-  }
-  55% {
-    transform: translateX(80px) skewX(-20deg);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-}
-@keyframes ani-sidebar-item {
-  0% {
-    transform: translateX(0px);
-  }
-  55% {
-    transform: translateX(80px) skewX(-20deg);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-}
 div {
   box-sizing: border-box;
 }
