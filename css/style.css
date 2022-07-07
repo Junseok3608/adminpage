@@ -1,4 +1,3 @@
-@charset "UTF-8";
 *,
 html {
   box-sizing: border-box;
@@ -10,54 +9,28 @@ div {
   box-sizing: inherit;
 }
 
-.grid-container {
-  max-width: 500px;
-  max-height: 500px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 100px 100px 100px;
-  grid-template-areas: "헤더 헤더 헤더 헤더" "사이드 메인 메인 메인" "사이드 메인 메인 메인" "사이드 메인 메인 메인";
-}
-@media screen and (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-    grid-template-areas: "헤더" "사이드" "메인";
-  }
-}
-.grid-container div {
-  border: 1px solid black;
-}
-.grid-container .grid-nav {
-  grid-area: 헤더;
-}
-.grid-container .grid-sidebar {
-  grid-area: 사이드;
-}
-.grid-container .grid-content {
-  grid-area: 메인;
+body {
+  background-color: gray;
+  height: 3000px;
 }
 
-.grid-container2 {
-  max-width: 500px;
-  max-height: 500px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 100px 100px 100px;
-  grid-template-areas: "큰거 큰거 ." "큰거 큰거 ." ". . .";
+.grey {
+  background-color: lightgray;
+  height: 2000px;
+  margin-top: 500px;
 }
-.grid-container2 div img {
+.grey .text {
+  width: 300px;
+}
+
+.imgdiv {
+  width: 400px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+}
+.imgdiv img {
   width: 100%;
-  height: 100%;
-}
-.grid-container2 div:nth-child(1) {
-  grid-area: 큰거;
-}
-@media screen and (max-width: 768px) {
-  .grid-container2 {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "큰거" "." ".";
-  }
 }
 
 div {
