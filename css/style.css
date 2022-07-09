@@ -26,6 +26,10 @@ div {
     width: 300px;
   }
 }
+body {
+  background-color: #eee;
+}
+
 .sidebar {
   position: fixed;
   background-color: #494cb4;
@@ -137,7 +141,6 @@ header .tab-username {
 main {
   margin-left: 40px;
   padding: 10px;
-  background-color: #eee;
   height: 100%;
 }
 main .main-title {
