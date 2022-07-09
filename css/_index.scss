@@ -2,6 +2,17 @@ $color1: #87ceeb;
 $color2: #3fc95a;
 $color3: #494cb4;
 $color4: #ffedc4;
+$borderColor: darkgrey;
+$iconcolor: rgba(0, 0, 0, 0.6);
+
+@keyframes searchsize {
+  0% {
+    width: 80px;
+  }
+  100% {
+    width: 300px;
+  }
+}
 
 .sidebar {
   position: fixed;
@@ -17,10 +28,89 @@ $color4: #ffedc4;
       margin-right: 17px;
     }
     p {
-      display: none;
+      transform: translateX(-100px);
     }
   }
 }
 .sidebar:hover {
-  width: 130px;
+  width: 120px;
+  transition: all 0.2s;
+  p {
+    transform: translateX(0px);
+    transition-delay: 0.5s;
+    transition: all 0.5s;
+  }
+}
+header {
+  padding: 5px;
+  margin-left: 40px;
+  border: 1px solid $borderColor;
+  .tab-menubars {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+  }
+  .fa-bars {
+    width: 60px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid $borderColor;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+  .tab-search {
+    form {
+      display: flex;
+      align-items: center;
+      input {
+        height: 35px;
+        border: rgba(0, 0, 0, 0.6) solid 1px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        padding: 10px;
+      }
+      input:focus {
+        animation: searchsize forwards 1s;
+      }
+      i {
+        padding: 8px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.6);
+        text-align: center;
+        justify-content: center;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+  .tab-icons {
+    justify-content: space-between;
+    i {
+      cursor: pointer;
+    }
+  }
+  .tab-username {
+    justify-content: flex-end;
+  }
+  .tab-search,
+  .tab-icons,
+  .tab-username {
+    height: 40px;
+    padding: 10px;
+    font-size: 20px;
+    color: $iconcolor;
+    align-items: center;
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    .tab-menubars {
+      display: none;
+    }
+    .tab-search,
+    .tab-icons,
+    .tab-username {
+      display: flex;
+    }
+  }
 }

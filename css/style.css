@@ -9,6 +9,23 @@ div {
   box-sizing: inherit;
 }
 
+@-webkit-keyframes searchsize {
+  0% {
+    width: 80px;
+  }
+  100% {
+    width: 300px;
+  }
+}
+
+@keyframes searchsize {
+  0% {
+    width: 80px;
+  }
+  100% {
+    width: 300px;
+  }
+}
 .sidebar {
   position: fixed;
   background-color: #494cb4;
@@ -25,11 +42,90 @@ div {
   margin-right: 17px;
 }
 .sidebar .sidebar-item p {
-  display: none;
+  transform: translateX(-100px);
 }
 
 .sidebar:hover {
-  width: 130px;
+  width: 120px;
+  transition: all 0.2s;
+}
+.sidebar:hover p {
+  transform: translateX(0px);
+  transition-delay: 0.5s;
+  transition: all 0.5s;
+}
+
+header {
+  padding: 5px;
+  margin-left: 40px;
+  border: 1px solid darkgrey;
+}
+header .tab-menubars {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+header .fa-bars {
+  width: 60px;
+  height: 40px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+  font-size: 20px;
+}
+header .tab-search form {
+  display: flex;
+  align-items: center;
+}
+header .tab-search form input {
+  height: 35px;
+  border: rgba(0, 0, 0, 0.6) solid 1px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 10px;
+}
+header .tab-search form input:focus {
+  -webkit-animation: searchsize forwards 1s;
+          animation: searchsize forwards 1s;
+}
+header .tab-search form i {
+  padding: 8px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  justify-content: center;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+header .tab-icons {
+  justify-content: space-between;
+}
+header .tab-icons i {
+  cursor: pointer;
+}
+header .tab-username {
+  justify-content: flex-end;
+}
+header .tab-search,
+header .tab-icons,
+header .tab-username {
+  height: 40px;
+  padding: 10px;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  header .tab-menubars {
+    display: none;
+  }
+  header .tab-search,
+header .tab-icons,
+header .tab-username {
+    display: flex;
+  }
 }
 
 div {
