@@ -4,6 +4,26 @@ $color3: #494cb4;
 $color4: #ffedc4;
 $borderColor: darkgrey;
 $iconcolor: rgba(0, 0, 0, 0.6);
+$b1sb: 1px solid black;
+$boxshadowmain: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+@mixin valueitemset($color) {
+  border-left: none;
+  margin: 10px;
+  border-radius: 10px;
+  border-left: 4px solid $color;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  div:nth-child(2) {
+    font-size: 30px;
+    text-align: end;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  p:nth-child(2) {
+    font-weight: 600;
+    margin-top: 5px;
+    font-size: 18px;
+  }
+}
 
 @keyframes searchsize {
   0% {
@@ -19,6 +39,7 @@ $iconcolor: rgba(0, 0, 0, 0.6);
   background-color: $color3;
   width: 40px;
   height: 100%;
+  z-index: 999;
   .sidebar-item {
     display: flex;
     margin: 20px 10px;
@@ -42,9 +63,14 @@ $iconcolor: rgba(0, 0, 0, 0.6);
   }
 }
 header {
+  position: fixed;
+  width: 100%;
+  top: 0;
   padding: 5px;
+  padding-right: 40px;
   margin-left: 40px;
   border: 1px solid $borderColor;
+  background-color: white;
   .tab-menubars {
     display: flex;
     justify-content: flex-end;
@@ -113,4 +139,67 @@ header {
       display: flex;
     }
   }
+}
+
+main {
+  margin-left: 40px;
+  padding: 10px;
+  background-color: #eee;
+
+  height: 100%;
+  .main-title {
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
+  .value-items {
+    width: 100%;
+    margin-bottom: 30px;
+    .value-item:nth-child(1) {
+      @include valueitemset($color1);
+    }
+    .value-item:nth-child(2) {
+      @include valueitemset($color2);
+    }
+    .value-item:nth-child(3) {
+      @include valueitemset($color3);
+    }
+    .value-item:nth-child(4) {
+      @include valueitemset($color4);
+    }
+    @media screen and (min-width: 768px) {
+      flex-wrap: nowrap;
+    }
+  }
+  .graph-item {
+    padding: 10px;
+    .item-content {
+      width: 100%;
+      padding: 15px;
+      box-shadow: $boxshadowmain;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      background-color: white;
+    }
+  }
+  .tasks-item {
+    padding: 10px;
+    .item-content {
+      box-shadow: $boxshadowmain;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      background-color: white;
+      .content-task {
+        border: 1px solid $borderColor;
+
+        padding: 15px;
+      }
+    }
+  }
+}
+.item-title {
+  box-shadow: $boxshadowmain;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #eee;
 }

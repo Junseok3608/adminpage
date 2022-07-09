@@ -15,7 +15,7 @@ div {
   }
 }
 @mixin colLgNum($num) {
-  @media screen and (max-width: 1200px) {
+  @media screen and (min-width: 769px) {
     width: (100% * ($num/12));
   }
 }
