@@ -9,28 +9,27 @@ div {
   box-sizing: inherit;
 }
 
-body {
-  background-color: gray;
-  height: 3000px;
+.sidebar {
+  position: fixed;
+  background-color: #494cb4;
+  width: 40px;
+  height: 100%;
+}
+.sidebar .sidebar-item {
+  display: flex;
+  margin: 20px 10px;
+  color: white;
+  font-size: 15px;
+}
+.sidebar .sidebar-item i {
+  margin-right: 17px;
+}
+.sidebar .sidebar-item p {
+  display: none;
 }
 
-.grey {
-  background-color: lightgray;
-  height: 2000px;
-  margin-top: 500px;
-}
-.grey .text {
-  width: 300px;
-}
-
-.imgdiv {
-  width: 400px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 100px;
-}
-.imgdiv img {
-  width: 100%;
+.sidebar:hover {
+  width: 130px;
 }
 
 div {

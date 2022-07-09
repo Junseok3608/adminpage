@@ -1,21 +1,26 @@
-body {
-  background-color: gray;
-  height: 3000px;
-}
-.grey {
-  background-color: lightgray;
-  height: 2000px;
-  margin-top: 500px;
-  .text {
-    width: 300px;
-  }
-}
+$color1: #87ceeb;
+$color2: #3fc95a;
+$color3: #494cb4;
+$color4: #ffedc4;
 
-.imgdiv {
-  width: 400px;
-  position: sticky;
-  top: 100px;
-  img {
-    width: 100%;
+.sidebar {
+  position: fixed;
+  background-color: $color3;
+  width: 40px;
+  height: 100%;
+  .sidebar-item {
+    display: flex;
+    margin: 20px 10px;
+    color: white;
+    font-size: 15px;
+    i {
+      margin-right: 17px;
+    }
+    p {
+      display: none;
+    }
   }
+}
+.sidebar:hover {
+  width: 130px;
 }
